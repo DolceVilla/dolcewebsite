@@ -26,7 +26,7 @@ const AboutUs = () => {
             <img
               src={assets.About5}
               alt="About Us"
-              className="rounded-bl-[180px] mt-[70px] rounded-tr-[180px] shadow-lg w-full h-auto max-h-[500px] object-cover"
+              className="rounded-bl-[180px] mt-[10px] rounded-tr-[180px] shadow-lg w-full h-auto max-h-[500px] object-cover"
             />
           </motion.div>
 

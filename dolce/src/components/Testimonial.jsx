@@ -96,7 +96,6 @@ export default Testimonial;
 
 
 
-
 import React, { useContext, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { AppContext } from "../Context/AppContext";
@@ -108,9 +107,10 @@ const Testimonial = () => {
   const { testimonial = [] } = useContext(AppContext);
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  // 🔹 Recalculate slider when window resizes
+  // 🔹 Force re-render for slick when window resizes (important for hosting)
   useEffect(() => {
     const handleResize = () => window.dispatchEvent(new Event("resize"));
+    setTimeout(handleResize, 500); // 👈 ensures correct layout after build
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -118,14 +118,14 @@ const Testimonial = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: false,
     responsive: [
-      { breakpoint: 1200, settings: { slidesToShow: 2 } },
+      { breakpoint: 1280, settings: { slidesToShow: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
@@ -152,19 +152,14 @@ const Testimonial = () => {
       </motion.h1>
 
       {/* Slider */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto overflow-hidden">
         <Slider {...settings}>
           {testimonial.map((t, index) => {
             const isExpanded = expandedIndex === index;
-
             return (
-              <div key={index} className="px-2">
+              <div key={index} className="px-3">
                 <div
-                  className={`flex flex-col justify-between 
-                  bg-gradient-to-b from-yellow-500 to-black 
-                  rounded-tl-[80px] rounded-br-[80px] 
-                  p-6 sm:p-8 shadow-lg min-h-[320px] 
-                  transition-all duration-300`}
+                  className="flex flex-col justify-between bg-gradient-to-b from-yellow-500 to-black rounded-tl-[80px] rounded-br-[80px] p-6 sm:p-8 shadow-lg min-h-[340px] h-full transition-all duration-300"
                 >
                   <p
                     className={`text-white text-base sm:text-lg font-serif mb-2 ${
@@ -174,7 +169,6 @@ const Testimonial = () => {
                     "{t.message}"
                   </p>
 
-                  {/* Toggle buttons */}
                   {t.message.length > 180 && (
                     <button
                       className="text-sm text-yellow-300 mt-2 font-serif self-end"
