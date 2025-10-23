@@ -102,6 +102,7 @@ const Contact = () => {
                 
                 <input type="tel" name='phone' placeholder="Enter Your Phone" className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none"/>
               </div> 
+              
                <label className="block text-black text-bold font-medium mb-2 font-serif">Subject:</label>
               <input type="text" name='subject' placeholder="Subject" className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none"/>
               <label className="block text-black text-bold font-medium mb-2 font-serif">Message:</label>
@@ -154,11 +155,13 @@ const Contact = () => {
               <input type="text" name='address' placeholder="Enter Your Address" className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none"/>
               <label>Phone:</label>
               <input type="tel" name='phone' placeholder="Enter Your Phone" className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none"/>
-            </div>
+                          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <label>Subject:</label>
             <input type="text" name='subject' placeholder="Subject" className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none"/>
             <label>Message:</label>
             <textarea name='message' placeholder="Write Your Message Here" className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none h-24"></textarea>
+            </div><br/>
             <button type="submit" className="w-full bg-gold text-white py-2 rounded-lg hover:bg-gray-800 transition">Send</button>
           </form>
         </motion.div>

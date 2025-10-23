@@ -50,17 +50,12 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-   {/*   <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4  "> */}
+ 
  <div className="relative z-10 flex flex-col items-center
-                justify-start pt-20 sm:justify-center sm:pt-0 min-h-screen text-center px-4">
+                justify-start pt-40 sm:justify-center sm:pt-0 min-h-screen text-center px-4">
 
 
     
-{/*<motion.h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-gold"
- initial={{ y: 50, opacity: 0 }} 
- animate={{ y: 0, opacity: 1 }} 
- transition={{ duration: 0.8, ease: "easeOut" }} > 
-  Turning Dreams into Reality </motion.h1> */}
 
 
 <motion.h1

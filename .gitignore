@@ -10,3 +10,5 @@ admin/build/
 dolce/build/
 dolce/dist/
 admin/dist/
+
+/uploads
