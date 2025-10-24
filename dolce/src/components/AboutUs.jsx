@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center  items-center min-h-screen bg-gray-100">
       {/* Outer Transparent Box */}
   <div className="bg-white/30 backdrop-blur-md shadow-xl w-full min-h-screen px-4 md:px-16 py-[100px] flex items-start">
  

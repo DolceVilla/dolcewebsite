@@ -111,7 +111,7 @@ const Hero = () => {
 {/* Search Bar */}
 
 
-<div className="w-full max-w-6xl mt-12 mx-auto">
+<div className="w-full max-w-5xl mt-12 mx-auto">
   <div className="bg-white p-4 border border-slate-600 rounded-lg text-black shadow-lg">
     <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 flex-wrap">
 
