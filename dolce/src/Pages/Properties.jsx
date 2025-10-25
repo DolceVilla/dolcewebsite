@@ -184,7 +184,7 @@ const Properties = () => {
 
       {/* Properties Grid */}
       <motion.div
-        className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="w-[90%] sm:w-[90%] md:w-[70%] lg:w-[900px] mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6"
         initial={{ x: 50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
