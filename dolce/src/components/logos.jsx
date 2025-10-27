@@ -52,8 +52,6 @@ const Logos = () => {
 
 export default Logos;  */}
 
-
-
 import React, { useContext } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -67,11 +65,14 @@ const Logos = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6, // desktop
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
+    swipe: true,          // enable swipe on mobile
+    draggable: true,      // allow drag on desktop and mobile
+    touchThreshold: 10,   // improve swipe sensitivity
     responsive: [
       { breakpoint: 1280, settings: { slidesToShow: 4 } },
       { breakpoint: 1024, settings: { slidesToShow: 3 } },
@@ -79,9 +80,11 @@ const Logos = () => {
       { 
         breakpoint: 480, 
         settings: { 
-          slidesToShow: 1,   // mobile shows 1 logo
-          centerMode: true,  // centers it
-          centerPadding: "0px"
+          slidesToShow: 1, 
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0px",
+          swipeToSlide: true,   // ensures swiping works
         } 
       },
     ],
@@ -92,7 +95,7 @@ const Logos = () => {
   }
 
   return (
-    <div className="relative w-full bg-white py-8 sm:py-10">
+    <div className="relative w-full bg-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Slider {...settings}>
           {developerLogo.map((logo, index) => (
