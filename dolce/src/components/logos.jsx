@@ -54,7 +54,6 @@ export default Logos;  */}
 
 
 
-
 import React, { useContext } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -80,9 +79,9 @@ const Logos = () => {
       { 
         breakpoint: 480, 
         settings: { 
-          slidesToShow: 1,   // show 1 logo on small mobile
-          centerMode: true,  // center single logo
-          centerPadding: "0px" // no extra padding
+          slidesToShow: 1,   // mobile shows 1 logo
+          centerMode: true,  // centers it
+          centerPadding: "0px"
         } 
       },
     ],
@@ -97,7 +96,7 @@ const Logos = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Slider {...settings}>
           {developerLogo.map((logo, index) => (
-            <div key={index} className="flex items-center justify-center p-2 sm:p-4">
+            <div key={index} className="flex items-center justify-center">
               <img
                 src={logo.image}
                 alt={logo.alt || `Logo ${index + 1}`}
