@@ -96,7 +96,7 @@ const Logos = () => {
 
   return (
     <div className="relative w-full bg-white py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <Slider {...settings}>
           {developerLogo.map((logo, index) => (
             <div key={index} className="flex items-center justify-center">
