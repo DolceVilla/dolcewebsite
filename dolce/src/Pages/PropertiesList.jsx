@@ -94,19 +94,22 @@ const PropertiesList = () => {
 
   return (
     <div>
-      {/* Cover Image */}
-      {docInfo.image.length > 0 && (
-        <div className=" w-full h-64 sm:h-80 md:h-[500px] lg:h-[600px] rounded-bl-[50px] rounded-br-[50px] ">
+      {/* Cover Image */}{/*}
+ 
+      {docInfo.image.length > 0 && (    
       
+      <div className=" w-full h-64 sm:h-80 md:h-[500px] lg:h-[600px] rounded-bl-[50px] rounded-br-[50px] ">
+      {/* */}{/*}
 
           <img
             src={docInfo.image[0]}
             alt={docInfo.name}
-            className="w-full h-full object-cover rounded-bl-[80px] rounded-br-[80px]"
+            className="w-full h-full relative object-cover rounded-bl-[80px] rounded-br-[80px]"
           />
-
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/20 to-transparent"></div>
-          <div className='absolute inset-0 mb-[600px] sm:mb-[200px] flex items-center justify-center'>
+        <div className='absolute inset-0 flex items-center justify-center mb-14  px-4'>
+       
+  
           <motion.h1
             className="text-white text-3xl md:text-5xl font-sans font-bold text-center px-4"
             initial={{ y: 50, opacity: 0 }}
@@ -117,9 +120,61 @@ const PropertiesList = () => {
           </motion.h1>
         </div>
 
-        </div>
 
-      )}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  )}
+
+*/}
+{docInfo.image.length > 0 && (
+  <div className="relative w-full h-64 sm:h-80 md:h-[500px] lg:h-[600px] rounded-bl-[50px] rounded-br-[50px] overflow-hidden">
+    {/* Background Image */}
+    <img
+      src={docInfo.image[0]}
+      alt={docInfo.name}
+      className="w-full h-full object-cover rounded-bl-[80px] rounded-br-[80px]"
+    />
+
+    {/* Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
+
+    {/* Centered Name */}
+    <div className="absolute inset-0 flex items-center justify-center px-4">
+      <motion.h1
+        className="text-white text-2xl sm:text-3xl md:text-5xl font-sans font-bold text-center px-4"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {docInfo.name}
+      </motion.h1>
+    </div>
+  </div>
+)}
+
+
+
+
+
+
+
+
+   
+
+
+   
 
 
 

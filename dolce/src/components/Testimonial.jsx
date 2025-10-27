@@ -96,7 +96,10 @@ export default Testimonial; */}
 
 
 
-import React, { useContext, useState } from "react";
+
+
+
+import React, { useContext, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { AppContext } from "../Context/AppContext";
 import "slick-carousel/slick/slick.css";
@@ -106,20 +109,36 @@ import { motion } from "framer-motion";
 const Testimonial = () => {
   const { testimonial = [] } = useContext(AppContext);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const settings = {
+  // ✅ Detect actual screen width (helps after hosting)
+  useEffect(() => {
+    const checkWidth = () => setIsMobile(window.innerWidth < 768);
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
+  const desktopSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     arrows: false,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
+  };
+
+  const mobileSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: false,
   };
 
   if (!testimonial.length) {
@@ -131,9 +150,9 @@ const Testimonial = () => {
   }
 
   return (
-    <div className="relative p-4 sm:p-8 w-full h-full bg-white">
+    <div className="relative p-6 sm:p-8 w-full bg-white">
       <motion.h1
-        className="text-center text-2xl sm:text-4xl text-gold font-serif"
+        className="text-center text-3xl sm:text-4xl text-gold font-serif"
         initial={{ x: -50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -142,21 +161,23 @@ const Testimonial = () => {
         Our Clients Experience
       </motion.h1>
 
-      <div className="relative overflow-hidden mt-10 sm:mt-[100px]">
-        <div className="max-w-8xl mx-auto py-6 sm:py-10">
-          <Slider {...settings}>
+      {/* ✅ Real Responsive Rendering Based on JS width */}
+      <div className="relative overflow-hidden mt-12">
+        <div className="max-w-6xl mx-auto py-10">
+          <Slider {...(isMobile ? mobileSettings : desktopSettings)}>
             {testimonial.map((t, index) => {
               const isExpanded = expandedIndex === index;
 
               return (
                 <div key={index}>
                   <div
-                    className={`shadow-lg bg-gradient-to-b from-yellow-500 to-black rounded-tl-[60px] sm:rounded-tl-[100px] rounded-br-[60px] sm:rounded-br-[100px]
-                     mx-1 sm:mx-2 p-4 sm:p-8 flex flex-col justify-between
-                      ${isExpanded ? "h-auto" : "h-[280px] sm:h-[300px]"}`}
+                    className={`shadow-lg bg-gradient-to-b from-yellow-500 to-black 
+                    rounded-tl-[80px] rounded-br-[80px] mx-3 
+                    p-6 sm:p-8 flex flex-col justify-between transition-all duration-300
+                    ${isExpanded ? "h-auto" : isMobile ? "h-[260px]" : "h-[300px]"}`}
                   >
                     <p
-                      className={`text-sm sm:text-base md:text-lg text-white mb-2 font-serif ${
+                      className={`text-white mb-2 font-serif text-sm sm:text-base ${
                         isExpanded ? "" : "line-clamp-6"
                       }`}
                     >
@@ -181,7 +202,7 @@ const Testimonial = () => {
                       </button>
                     )}
 
-                    <h3 className="text-base sm:text-lg text-white font-semibold mt-4 font-serif">
+                    <h3 className="text-sm sm:text-lg text-white font-semibold mt-4 font-serif">
                       {t.name}
                     </h3>
                   </div>
@@ -196,8 +217,4 @@ const Testimonial = () => {
 };
 
 export default Testimonial;
-
-
-
-
 
