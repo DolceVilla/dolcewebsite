@@ -45,7 +45,7 @@ const RelatedProp = ({ docId }) => {
             <div className="p-4">
               <p className="text-gray-900 text-lg font-medium text-center">{item.name}</p>
 
-<div className="flex flex-wrap items-center gap-4 font-serif text-sm text-black my-2">
+<div className="flex flex-wrap items-center gap-10 font-serif text-sm text-black my-2">
                 {item.amenities?.map((a, idx) => (
                   <div key={idx} className="flex items-center gap-1">
                     <img src={a.icon} alt={a.name} className="w-6 h-6 font-serif" />

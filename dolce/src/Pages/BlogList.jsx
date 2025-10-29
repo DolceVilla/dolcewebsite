@@ -35,7 +35,7 @@ const BlogList = () => {
       </h1>
 
       {/* Content */}
-      <div className="mt-4 sm:mt-6 ml-20 mr-10  ">
+      <div className="mt-4 sm:mt-6 ml-20 mr-8  ">
         {docInfo.content && (
           <div
             className="prose max-w-full sm:prose-sm md:prose md:mx-auto"
