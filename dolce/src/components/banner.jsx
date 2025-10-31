@@ -53,10 +53,10 @@ const Banner = () => {
               <div className="p-4 bg-white">
                 
                 <p className="text-gray-900 text-lg font-bold text-xl">{item.name}</p>
-                <div className="flex flex-wrap items-center gap-4 font-serif text-sm text-black my-2">
+                <div className="flex flex-wrap items-center gap-4  text-sm text-black my-2">
                 {item.amenities?.map((a, idx) => (
                   <div key={idx} className="flex items-center gap-1">
-                    <img src={a.icon} alt={a.name} className="w-6 h-6 font-serif" />
+                    <img src={a.icon} alt={a.name} className="w-6 h-6 " />
                     <span>{a.name}</span>
                   </div>
                 ))}
@@ -67,6 +67,7 @@ const Banner = () => {
                 </p>
 
   <hr className="my-2" />
+
 <div className="p-4 md:p-0">
   <ul className="flex flex-row sm:flex-row gap-4 sm:gap-10 md:gap-4">
     {/* Call Button */}
@@ -98,6 +99,15 @@ const Banner = () => {
 
 
 
+
+
+
+
+
+
+
+
+  {/** */}
 
               </div>
             </motion.div>
