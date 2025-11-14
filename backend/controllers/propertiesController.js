@@ -24,6 +24,7 @@ const addProperties = async (req, res) => {
 const featuresArray = JSON.parse(req.body.features);
 
 
+
     // Upload amenity icons to Cloudinary
   {/*}  await Promise.all(
       amenitiesArray.map(async (item, index) => {
@@ -37,7 +38,7 @@ await Promise.all(
   amenitiesArray.map(async (item, index) => {
     if (amenityIconsFiles[index]) {
       const result = await cloudinary.uploader.upload(amenityIconsFiles[index].path, { resource_type: 'image' });
-      item.icon = result.secure_url;  // ✅ URL stored in DB
+      item.icon = result.secure_url;  //  URL stored in DB
     }
   })
 );
@@ -144,6 +145,7 @@ const singleProperties = async(req,res)=>{
   } catch(error){
     console.log(error)
     res.json({success:false, message:error.message})
+    
   }
 }
 

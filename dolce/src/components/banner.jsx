@@ -27,7 +27,7 @@ const Banner = () => {
         </motion.h1>
 
         {/* Property Grid (show only 6) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center pt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center pt-4 ">
           {property.slice(0, 6).map((item, index) => (     
             <motion.div
               key={index}
@@ -46,7 +46,7 @@ const Banner = () => {
               viewport={{ once: true }}
             >
               <img
-                className="w-full h-48 md:h-56 object-cover rounded-bl-[100px] transform transition-transform duration-500 hover:scale-105"
+                className="w-full h-48 md:h-56  object-cover rounded-bl-[100px] transform transition-transform duration-500 hover:scale-105"
                 src={item.image[0]}
                 alt={item.name}
               />
@@ -67,10 +67,10 @@ const Banner = () => {
                 </p>
 
   <hr className="my-2" />
-
+{/*}
 <div className="p-4 md:p-0">
   <ul className="flex flex-row sm:flex-row gap-4 sm:gap-10 md:gap-4">
-    {/* Call Button */}
+    {/* Call Button */}{/*}
     <li
       onClick={(e) => {
         e.stopPropagation(); // Prevent parent div click
@@ -82,7 +82,8 @@ const Banner = () => {
       Call
     </li>
 
-    {/* WhatsApp Button */}
+    {/* WhatsApp Button */}{/*}
+
     <li
       onClick={(e) => {
         e.stopPropagation(); // Prevent parent div click
@@ -94,8 +95,34 @@ const Banner = () => {
       Whatsapp
     </li>
   </ul>
-</div>
+</div>*/}
+<div className="p-4 md:p-0 w-full flex justify-center">
+  <ul className="flex flex-col xs:flex-row sm:flex-row md:flex-row gap-4 sm:gap-8 md:gap-6 items-center justify-center w-full">
+    {/* Call Button */}
+    <li
+      onClick={(e) => {
+        e.stopPropagation();
+        window.open('tel:+971524299495', '_blank');
+      }}
+      className="flex items-center justify-center text-black gap-2 px-4 py-3 border rounded font-serif w-full sm:w-40 md:w-44 h-12 hover:bg-gray-100 transition cursor-pointer"
+    >
+      <FaPhone className="text-gold" />
+      Call
+    </li>
 
+    {/* WhatsApp Button */}
+    <li
+      onClick={(e) => {
+        e.stopPropagation();
+        window.open('https://wa.me/971524299495', '_blank');
+      }}
+      className="flex items-center justify-center text-black gap-2 px-4 py-3 border rounded font-serif w-full sm:w-40 md:w-44 h-12 hover:bg-gray-100 transition cursor-pointer"
+    >
+      <FaWhatsapp className="text-gold" />
+      WhatsApp
+    </li>
+  </ul>
+</div>
 
 
 
@@ -138,4 +165,10 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Banner; 
+
+
+
+
+
+

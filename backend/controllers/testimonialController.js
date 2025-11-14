@@ -36,6 +36,7 @@ const addTestimonial = async (req, res) => {
 };
 
 
+
 const listTestimonial = async (req, res) =>{
     try {
         const testimonial = await testimonialModel.find({});

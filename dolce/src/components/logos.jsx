@@ -63,7 +63,8 @@ const Logos = () => {
   const { developerLogo = [] } = useContext(AppContext);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ Detect actual screen width (works after hosting)
+
+  //  Detect actual screen width (works after hosting)
   useEffect(() => {
     const checkWidth = () => setIsMobile(window.innerWidth < 768);
     checkWidth();
@@ -71,7 +72,9 @@ const Logos = () => {
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
-  // ✅ Settings for desktop and mobile
+  //  Settings for desktop and mobile
+
+
   const desktopSettings = {
     dots: false,
     infinite: true,
@@ -102,6 +105,7 @@ const Logos = () => {
     <div className="relative p-8 w-full bg-white">
       <div className="max-w-7xl mx-auto py-10">
         <Slider {...(isMobile ? mobileSettings : desktopSettings)}>
+          
           {developerLogo.map((logo, index) => (
             <div key={index} className="flex items-center justify-center p-6">
               <img

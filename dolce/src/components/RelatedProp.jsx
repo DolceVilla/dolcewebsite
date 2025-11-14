@@ -24,6 +24,7 @@ const RelatedProp = ({ docId }) => {
         Simply browse through our extensive list of trusted properties.
       </p>
 
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 w-full">
         {relDoc.slice(0, 4).map((item, index) => (
           <motion.div
