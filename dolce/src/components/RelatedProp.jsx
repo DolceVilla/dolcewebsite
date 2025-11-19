@@ -41,7 +41,7 @@ const RelatedProp = ({ docId }) => {
             <img
               className="w-full h-48 sm:h-52 md:h-48 object-cover rounded-bl-[50px] transform transition-transform duration-500 hover:scale-105"
               src={item.image[0]}
-              alt={item.name}
+              alt={item.name}  loading="lazy"
             />
             <div className="p-4">
               <p className="text-gray-900 text-lg font-medium text-center">{item.name}</p>

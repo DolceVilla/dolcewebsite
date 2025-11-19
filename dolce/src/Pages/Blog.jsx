@@ -47,6 +47,7 @@ const Blog = () => {
       <div className="relative overflow-hidden h-[500px] mt-[50px] md:mt-[70px] lg:mt-[100px]">
         <img
           src={assets4.blogcover}
+           loading="lazy"
           className="w-full h-full object-cover rounded-bl-[100px] rounded-br-[100px]"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/80 to-transparent"></div>

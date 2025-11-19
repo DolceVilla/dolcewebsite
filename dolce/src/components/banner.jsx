@@ -48,7 +48,7 @@ const Banner = () => {
               <img
                 className="w-full h-48 md:h-56  object-cover rounded-bl-[100px] transform transition-transform duration-500 hover:scale-105"
                 src={item.image[0]}
-                alt={item.name}
+                alt={item.name}  loading="lazy"
               />
               <div className="p-4 bg-white">
                 

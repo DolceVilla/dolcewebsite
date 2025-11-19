@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="fixed inset-0 z-0">
         <img
           src={images[currentIndex]}
-          alt="Hero"
+          alt="Hero"  loading={currentIndex === 0 ? "eager" : "lazy"}
           className="w-full h-full object-cover object-center transition-all duration-1000 ease-in-out"
         />
         <div className="absolute inset-0 bg-black bg-opacity-40" />

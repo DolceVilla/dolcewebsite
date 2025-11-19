@@ -110,7 +110,7 @@ const Logos = () => {
             <div key={index} className="flex items-center justify-center p-6">
               <img
                 src={logo.image}
-                alt={logo.alt || `Logo ${index + 1}`}
+                alt={logo.alt || `Logo ${index + 1}`}  loading="lazy"
                 className="w-32 h-32 object-cover rounded-full border-2 border-gray-200 shadow-md"
               />
             </div>

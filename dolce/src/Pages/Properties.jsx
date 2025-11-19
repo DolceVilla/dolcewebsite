@@ -76,7 +76,7 @@ const Properties = () => {
         <img
           src={assets.Prop}
           className="w-full h-full object-cover rounded-bl-[100px] rounded-br-[100px]"
-          alt="banner"
+          alt="banner"  loading="lazy"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/80 to-transparent"></div>
 
@@ -200,6 +200,7 @@ const Properties = () => {
               className="rounded-bl-[80px] mt-2 px-2 w-full h-48 object-cover rounded-tl-2xl"
               src={item.image[0]}
               alt={item.name}
+               loading="lazy"
             />
             <div className="p-4">
               <p className="text-gray-900 text-lg font-medium">{item.name}</p>

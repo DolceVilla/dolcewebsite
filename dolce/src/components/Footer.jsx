@@ -13,7 +13,7 @@ const Footer = () => {
           <span className="text-lg font-semibold">Follow Us:</span>
           <div className="flex space-x-4 text-xl">
             <a href="https://www.facebook.com/dolcevillasrealestate" className="hover:text-blue-500"><FaFacebook /></a>
-            <a href="https://www.youtube.com/channel/UCEwOKYmiMD3gyaKxzcNXgQw" className="hover:text-blue-400"><FaYoutube /></a>
+            <a href="https://www.youtube.com/channel/UCEwOKYmiMD3gyaKxzcNXgQw" className="hover:text-red-400"><FaYoutube /></a>
            
             <a href="https://www.instagram.com/dolcevillasrealestate" className="hover:text-pink-500"><FaInstagram /></a>
             <a href="https://www.linkedin.com/in/the-dolce-villas-554620288" className="hover:text-blue-700"><FaLinkedin /></a>
